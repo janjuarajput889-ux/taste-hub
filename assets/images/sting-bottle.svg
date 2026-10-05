@@ -1,0 +1,25 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 420" role="img" aria-labelledby="title">
+  <title id="title">Sting energy drink bottle with prominent Sting logo</title>
+  <defs>
+    <linearGradient id="background" x1="0" y1="0" x2="1" y2="1">
+      <stop stop-color="#31230b"/>
+      <stop offset="1" stop-color="#111"/>
+    </linearGradient>
+    <linearGradient id="can" x1="0" y1="0" x2="1" y2="0">
+      <stop stop-color="#981414"/>
+      <stop offset=".5" stop-color="#f0261c"/>
+      <stop offset="1" stop-color="#850e12"/>
+    </linearGradient>
+  </defs>
+  <rect width="640" height="420" fill="url(#background)"/>
+  <circle cx="320" cy="210" r="165" fill="#ffbd00" opacity=".08"/>
+  <g transform="translate(250 35)">
+    <path d="M28 20h84l14 26 12 264-14 28H42l-14-28 12-264z" fill="url(#can)" stroke="#ffbd00" stroke-width="4"/>
+    <path d="M42 18h56v15H42zM42 328h56v12H42z" fill="#ddd"/>
+    <path d="m92 75-44 84h31l-14 76 55-101H87z" fill="#ffdf36" stroke="#fff0a0" stroke-width="3" stroke-linejoin="round"/>
+    <path d="M33 228h108v58H33z" fill="#710e12" opacity=".86"/>
+    <text x="87" y="269" fill="#fff" font-family="Arial, sans-serif" font-size="38" font-style="italic" font-weight="900" letter-spacing=".5" text-anchor="middle" transform="rotate(-8 87 269)">STING</text>
+    <text x="87" y="301" fill="#ffe7a0" font-family="Arial, sans-serif" font-size="9" font-weight="800" letter-spacing="2" text-anchor="middle">ENERGY DRINK</text>
+  </g>
+  <text x="320" y="385" fill="#ffcf32" font-family="Arial, sans-serif" font-size="13" font-weight="800" letter-spacing="4" text-anchor="middle">ENERGY DRINK</text>
+</svg>

@@ -1,0 +1,23 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 800" role="img" aria-labelledby="title description">
+  <title id="title">Taste Hub menu image placeholder</title>
+  <desc id="description">A warm, neutral placeholder image for a Taste Hub menu item.</desc>
+  <defs>
+    <radialGradient id="glow" cx="74%" cy="24%" r="70%">
+      <stop offset="0" stop-color="#6a4e14" stop-opacity=".7"/>
+      <stop offset="1" stop-color="#171714" stop-opacity="0"/>
+    </radialGradient>
+    <linearGradient id="plate" x1="0" x2="1" y1="0" y2="1">
+      <stop stop-color="#f4ead4"/>
+      <stop offset="1" stop-color="#b8aa8d"/>
+    </linearGradient>
+  </defs>
+  <rect width="1200" height="800" fill="#171714"/>
+  <rect width="1200" height="800" fill="url(#glow)"/>
+  <circle cx="600" cy="365" r="238" fill="#090909" opacity=".35"/>
+  <circle cx="580" cy="340" r="222" fill="url(#plate)"/>
+  <circle cx="580" cy="340" r="180" fill="#27251f"/>
+  <circle cx="580" cy="340" r="165" fill="#1e1d19" stroke="#d3a83c" stroke-opacity=".5" stroke-width="3"/>
+  <path d="M910 180v340m-28-340v126m56-126v126m-28 0v214M270 180v340m-25-340v150c0 32 50 32 50 0V180m-25 150v190" fill="none" stroke="#d3a83c" stroke-linecap="round" stroke-width="12" opacity=".78"/>
+  <text x="600" y="672" fill="#f5f1e7" font-family="Georgia,serif" font-size="34" text-anchor="middle" letter-spacing="2">TASTE HUB</text>
+  <text x="600" y="714" fill="#a8a397" font-family="Arial,sans-serif" font-size="17" text-anchor="middle">MENU IMAGE COMING SOON</text>
+</svg>
