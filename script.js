@@ -649,6 +649,47 @@ async function sha256Hex(value) {
     return Array.from(new Uint8Array(digest), byte => byte.toString(16).padStart(2, "0")).join("");
 }
 
+async function shareWebsite() {
+    const url = window.location.href.split("#")[0];
+    const shareData = {
+        title: "Taste Hub | Delicious Food in Dina",
+        text: "Explore the Taste Hub menu and order your favorites.",
+        url
+    };
+    const status = document.getElementById("shareStatus");
+
+    if (window.location.protocol === "file:" || ["localhost", "127.0.0.1", "[::1]"].includes(window.location.hostname)) {
+        status.textContent = "This website is running locally. Publish it online to share a public link.";
+        status.hidden = false;
+        return;
+    }
+
+    if (navigator.share) {
+        try {
+            await navigator.share(shareData);
+            status.textContent = "Taste Hub shared successfully.";
+            status.hidden = false;
+            return;
+        } catch (error) {
+            if (error.name === "AbortError") return;
+        }
+    }
+
+    if (navigator.clipboard && window.isSecureContext) {
+        try {
+            await navigator.clipboard.writeText(url);
+            status.textContent = "Website link copied. Share it with your friends!";
+            status.hidden = false;
+            return;
+        } catch {
+            status.textContent = "Clipboard access was blocked. Copy the website link from the prompt.";
+            status.hidden = false;
+        }
+    }
+
+    window.prompt("Copy the Taste Hub website link:", url);
+}
+
 
 function openAdminPanel() {
     isAdminAuthenticated = false;

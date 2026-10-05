@@ -54,6 +54,11 @@
 
     </button>
 
+    <button class="share-website-button" type="button" onclick="shareWebsite()" aria-label="Share Taste Hub website">
+        <span aria-hidden="true">↗</span>
+        <span class="share-button-label">Share</span>
+    </button>
+
 </header>
 
 
@@ -825,6 +830,7 @@
 <button class="mobile-sticky-order" type="button" onclick="openCart()">
     🛒 View cart &amp; order <span id="mobileCartCount">0</span>
 </button>
+<p class="share-status" id="shareStatus" role="status" aria-live="polite" hidden></p>
 
 <!-- ================= JAVASCRIPT ================= -->
 
