@@ -1,4 +1,4 @@
-const ADMIN_PASSWORD = "1234";
+const ADMIN_PASSWORD_SHA256 = "ba8a9b134b80fb8d3196d5f28a02eaf3586e9b0bcc99520efcc75686093e1053";
 const MENU_STORAGE_KEY = "tasteHubMenuData";
 const MENU_CATALOG_VERSION = 3;
 const MENU_IMAGE_PLACEHOLDER = "assets/images/menu-placeholder.svg";
@@ -643,6 +643,13 @@ function checkoutWhatsApp() {
 }
 
 
+async function sha256Hex(value) {
+    const data = new TextEncoder().encode(value);
+    const digest = await crypto.subtle.digest("SHA-256", data);
+    return Array.from(new Uint8Array(digest), byte => byte.toString(16).padStart(2, "0")).join("");
+}
+
+
 function openAdminPanel() {
     isAdminAuthenticated = false;
     document.getElementById("adminLogin").hidden = false;
@@ -778,10 +785,18 @@ document.addEventListener("keydown", event => {
 
 document.getElementById("menuSearch").addEventListener("input", renderMenu);
 
-document.getElementById("adminLoginForm").addEventListener("submit", event => {
+document.getElementById("adminLoginForm").addEventListener("submit", async event => {
     event.preventDefault();
     const password = document.getElementById("adminPassword").value;
-    if (password !== ADMIN_PASSWORD) {
+    let passwordHash;
+    try {
+        passwordHash = await sha256Hex(password);
+    } catch {
+        document.getElementById("adminLoginError").textContent = "Password verification failed because SHA-256 is unavailable in this browser context.";
+        return;
+    }
+
+    if (passwordHash !== ADMIN_PASSWORD_SHA256) {
         document.getElementById("adminLoginError").textContent = "That password did not match. Try again.";
         return;
     }
